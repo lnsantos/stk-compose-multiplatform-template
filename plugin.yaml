@@ -26,21 +26,19 @@ spec:
       required: true
       pattern: '^[^:>#*]+|([^:>#*][^>#*]+[^:>#*])$'
       help: 'not permitted character special'
-
     - label: insert project name example -> MyApplication
-      name: project_root_name
+      name: root_name
       type: text
+      global: true
       required: true
       pattern: '([A-Z][a-z]+)+'
       help: 'Inform your project name none character special' 
-
     - label: insert namespace project example -> com.lnsantos.br
       name: namespace
       type: text
       required: true
       pattern: '([a-z.]+)+'
       help: 'Inform your namespace (e.g.: com.lnsantos.br)'
-
-computed-inputs:
-   namespace_folder: "{{ namespace|replace('.','/') }}"
-   bundle_id: "{{ namespace|project_root_name|join('.') }}"
+  computed-inputs:
+      namespace_folder: "{{ namespace|replace('.','/') }}"
+      bundle_id: "{{namespace}}.{{root_name}}"

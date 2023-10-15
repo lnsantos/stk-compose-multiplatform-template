@@ -1,4 +1,4 @@
-rootProject.name = {{project_root_name}}
+rootProject.name = "{{root_name}}"
 
 include(":androidApp")
 include(":shared")
