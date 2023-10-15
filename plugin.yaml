@@ -4,7 +4,7 @@ metadata:
   name: stk-compose-multiplatform-template
   display-name: compose multiplatform
   description: Inicializar projeto sample compose multiplatform
-  version: 0.0.1
+  version: 0.0.2
   picture: plugin.png
 spec:
   type: app
@@ -12,7 +12,7 @@ spec:
     - python
   about: docs/about.md
   implementation: docs/implementation.md
-  release-notes: docs/release-notes-0.0.1.md
+  release-notes: docs/release-notes-0.0.2.md
   requirements: docs/requirements.md
   single-use: False
   repository: https://github.com/lnsantos/stk-compose-multiplatform-template.git
