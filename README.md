@@ -1,5 +1,7 @@
 ## Goal
 
+[Stackspot plugin repository](https://app.stackspot.com/pt/lucas-santos/studios/lnsantos-kotlin/plugins/stk-compose-multiplatform-template)
+
 This repository is a plugin stackspot to helper developers in create new projects using **compose multiplatform**.
 
 ## Requirements
