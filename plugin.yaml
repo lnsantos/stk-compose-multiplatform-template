@@ -4,7 +4,7 @@ metadata:
   name: stk-compose-multiplatform-template
   display-name: compose multiplatform
   description: Inicializar projeto sample compose multiplatform
-  version: 0.0.1-test
+  version: 0.0.1
   picture: plugin.png
 spec:
   type: app
