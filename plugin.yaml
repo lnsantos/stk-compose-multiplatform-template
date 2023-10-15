@@ -1,8 +1,8 @@
 schema-version: v2
 kind: plugin
 metadata:
-  name: compose
-  display-name: compose
+  name: stk-compose-multiplatform-template
+  display-name: compose multiplatform
   description: Inicializar projeto sample compose multiplatform
   version: 0.0.1-test
   picture: plugin.png
@@ -20,22 +20,27 @@ spec:
     - Api
   stk-projects-only: false
   inputs:
-    - label: Type name of your resource
-      name: resource
+    - label: insert name application example -> My App
+      type: text
+      name: app_name
+      required: true
+      pattern: '^[^:>#*]+|([^:>#*][^>#*]+[^:>#*])$'
+      help: 'not permitted character special'
+
+    - label: insert project name example -> MyApplication
+      name: project_root_name
       type: text
       required: true
-      default: Client
       pattern: '([A-Z][a-z]+)+'
-      help: 'Inform your resource name (e.g.: Client)'
-    - label: Choose http method of new endpoint
-      name: method
+      help: 'Inform your project name none character special' 
+
+    - label: insert namespace project example -> com.lnsantos.br
+      name: namespace
       type: text
-      items:
-        - GET
-        - POST
-        - PUT
-        - DELETE
-        - PATCH
-      default: GET
       required: true
-      help: 'Inform the method of the endpoint (e.g.: post or delete)'
+      pattern: '([a-z.]+)+'
+      help: 'Inform your namespace (e.g.: com.lnsantos.br)'
+
+computed-inputs:
+   namespace_folder: "{{ namespace|replace('.','/') }}"
+   bundle_id: "{{ namespace|project_root_name|join('.') }}"
